@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="sidepanel.css"></head><body>
+<div class="topbar">
+  <div class="brand">⚡ PromptForge <span class="pro">PRO</span></div>
+  <button id="settingsCog">⚙️</button>
+</div>
+<div id="settingsPanel" class="settings-panel" style="display:none">
+  <h4>Settings</h4>
+  <label>Display Mode</label>
+  <select id="displayMode"><option value="slider" selected>Slider (Side Panel - Default)</option><option value="floating">Floating Overlay</option><option value="popup">Popup</option></select>
+  <label>Delay between prompts (sec)</label><input id="delay" type="number" value="3" min="0" max="30">
+  <label><input id="autoWait" type="checkbox" checked> Wait for generation to finish</label>
+  <hr><a href="https://ko-fi.com/ramitgirdhar" target="_blank" class="kofi-btn">☕ Support on Ko-fi</a>
+</div>
+
+<div class="bulk-paste-area">
+  <label>📋 BULK PASTE - Paste 6 prompts at once (auto-creates cards)</label>
+  <textarea id="bulkPaste" placeholder="Paste 6 lines, each line = 1 prompt
+Example:
+Hook about black holes
+Hook about why we dream
+Explain quantum entanglement
+Why AI curiosity matters
+... it auto-adds!"></textarea>
+  <div class="bulk-actions"><span id="bulkInfo">Paste detected: 0</span><select id="splitMode"><option value="line">Split by: Each line</option><option value="blank">Split by: Blank line</option></select><button id="bulkAddBtn">➕ Add All</button><button id="bulkClearBtn">Clear</button></div>
+</div>
+
+<div class="controls-row"><button id="addOneBtn" class="secondary">+ Add Single Prompt</button><span id="totalCount">0 prompts</span></div>
+
+<div id="promptList" class="prompt-list"></div>
+
+<div class="queue-actions">
+  <div class="progress"><div id="progressBar"><div id="progressFill"></div></div><div id="status">Ready - Slider mode active</div></div>
+  <div class="actions"><button id="startBtn" class="primary">▶ Start Queue (0)</button><button id="stopBtn" class="danger" disabled>⏹ Stop</button></div>
+</div>
+
+<div class="kofi-footer"><div class="kofi-text">Made by Ramit • Enjoying it?</div><a href="https://ko-fi.com/ramitgirdhar" target="_blank" class="kofi-btn">☕ Buy me a coffee</a></div>
+<script src="sidepanel.js"></script>
+</body></html>

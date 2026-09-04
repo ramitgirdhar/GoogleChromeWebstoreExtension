@@ -1,0 +1,51 @@
+{
+  "manifest_version": 3,
+  "name": "Bulk PromptForge Pro - Meta AI & Grok",
+  "version": "2.1.0",
+  "description": "Bulk prompt generator for Meta AI, Grok, ChatGPT. Paste 6 prompts, attach multiple ref images per prompt, slider mode.",
+  "permissions": [
+    "storage",
+    "downloads",
+    "activeTab",
+    "scripting",
+    "sidePanel"
+  ],
+  "host_permissions": [
+    "https://*.meta.ai/*",
+    "https://www.meta.ai/*",
+    "https://*.grok.com/*",
+    "https://grok.com/*",
+    "https://*.openai.com/*",
+    "https://*.chatgpt.com/*"
+  ],
+  "action": {
+    "default_title": "PromptForge Pro"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.meta.ai/*",
+        "https://www.meta.ai/*",
+        "https://*.grok.com/*",
+        "https://grok.com/*",
+        "https://*.openai.com/*",
+        "https://*.chatgpt.com/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
